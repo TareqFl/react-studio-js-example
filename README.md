@@ -1,6 +1,6 @@
 # React-react-studio-js
 
-![Screenshot](img/ref_1.png?raw=true "stem tracks mute solo volume control")
+![Screenshot](img/ref_1.png?raw=true 'stem tracks mute solo volume control')
 
 features
 Record track,
@@ -23,23 +23,23 @@ react-studio-js requires webaudio in the browser to function correctly: [Can I U
 https://github.com/TareqFl/react-studio-js-example
 
 ```javascript
-import ReactStudio from "react-studio-js";
+import ReactStudio from 'react-studio-js';
 
 // =============Annotations Actions================>
 const actions = [
   {
-    class: "fas.fa-play",
-    title: "Play Annotation",
+    class: 'fas.fa-play',
+    title: 'Play Annotation',
     action: (annotation) => {
-      ee.emit("play", annotation.start, annotation.end);
+      ee.emit('play', annotation.start, annotation.end);
     },
   },
   {
-    class: "fas.fa-plus",
-    title: "Insert New Annotation",
+    class: 'fas.fa-plus',
+    title: 'Insert New Annotation',
     action: (annotation, i, annotations, opts) => {
       if (i === annotations.length - 1) {
-        return console.log("not possible");
+        return console.log('not possible');
       }
 
       let newIndex = i + 1;
@@ -47,8 +47,8 @@ const actions = [
         id: String(newIndex),
         start: annotation.end,
         end: annotations[i + 1].start,
-        lines: ["New Draft"],
-        lang: "en",
+        lines: ['New Draft'],
+        lang: 'en',
       };
 
       annotations.forEach((ann, indx) => {
@@ -61,8 +61,8 @@ const actions = [
   },
 
   {
-    class: "fas.fa-trash",
-    title: "Delete annotation",
+    class: 'fas.fa-trash',
+    title: 'Delete annotation',
     action: (annotation, i, annotations) => {
       annotations.splice(i, 1);
     },
@@ -75,12 +75,13 @@ var playlist = ReactStudio({
   samplesPerPixel: 3000,
   mono: true,
   waveHeight: 70,
-  container: document.getElementById("playlist"),
-  state: "cursor",
+  timescale: true,
+  container: document.getElementById('playlist'),
+  state: 'cursor',
   colors: {
-    waveOutlineColor: "#222B36",
-    timeColor: "grey",
-    fadeColor: "black",
+    waveOutlineColor: '#222B36',
+    timeColor: 'grey',
+    fadeColor: 'black',
   },
   controls: {
     show: true,
@@ -102,19 +103,19 @@ var playlist = ReactStudio({
 playlist
   .load([
     {
-      src: "track 1 source",
-      name: "name",
+      src: 'track 1 source',
+      name: 'name',
       gain: 1,
     },
     {
-      src: "track 2 source",
-      name: "name",
+      src: 'track 2 source',
+      name: 'name',
       start: 8.5,
       fadeIn: {
         duration: 0.5,
       },
       fadeOut: {
-        shape: "logarithmic",
+        shape: 'logarithmic',
         duration: 0.5,
       },
     },
@@ -132,7 +133,7 @@ var options = {
   ac: new (window.AudioContext || window.webkitAudioContext)(),
 
   // DOM container element REQUIRED
-  container: document.getElementById("playlist"),
+  container: document.getElementById('playlist'),
 
   // sample rate of the project. (used for correct peaks rendering)
   sampleRate: new (
@@ -150,7 +151,7 @@ var options = {
   exclSolo: false,
 
   // default fade curve type.
-  fadeType: "logarithmic", // (logarithmic | linear | sCurve | exponential)
+  fadeType: 'logarithmic', // (logarithmic | linear | sCurve | exponential)
 
   // whether or not to include the time measure.
   timescale: false,
@@ -184,13 +185,13 @@ var options = {
 
   colors: {
     // color of the wave background
-    waveOutlineColor: "white",
+    waveOutlineColor: 'white',
 
     // color of the time ticks on the canvas
-    timeColor: "grey",
+    timeColor: 'grey',
 
     // color of the fade drawn on canvas
-    fadeColor: "black",
+    fadeColor: 'black',
   },
 
   // height in pixels of each canvas element a waveform is on.
@@ -204,10 +205,10 @@ var options = {
 
   // interaction state of the playlist
   // (cursor | select | fadein | fadeout | shift)
-  state: "cursor",
+  state: 'cursor',
 
   // (line | fill)
-  seekStyle: "line",
+  seekStyle: 'line',
 
   // Array of zoom levels in samples per pixel.
   // Smaller numbers have a greater zoom in.
@@ -228,10 +229,10 @@ var options = {
     controls: [
       {
         // class names for generated <i> tag separated by '.'
-        class: "fa.fa-minus",
+        class: 'fa.fa-minus',
 
         // title attribute for the generated <i> tag
-        title: "Reduce annotation end by 0.010s",
+        title: 'Reduce annotation end by 0.010s',
 
         // function which acts on the given annotation row
         // when the corresponding <i> is clicked.
@@ -376,12 +377,12 @@ var options = {
 react-studio-js uses an instance of [event-emitter](https://www.npmjs.com/package/event-emitter) to send & receive messages from the playlist.
 
 ```javascript
-import EventEmitter from "event-emitter";
-import ReactStudio from "react-studio-js";
+import EventEmitter from 'event-emitter';
+import ReactStudio from 'react-studio-js';
 
 var playlist = WaveformPlaylist(
   {
-    container: document.getElementById("playlist"),
+    container: document.getElementById('playlist'),
   },
 
   // you can pass your own event emitter
