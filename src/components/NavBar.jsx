@@ -8,16 +8,18 @@ import {
   InputBase,
   Tooltip,
   Button,
+  IconButton,
 } from '@mui/material';
 import ModeSwitch from './ModeSwitch';
 import { useThemeSettings } from '../hooks';
 import { dark, light } from '../theme';
 import { Bars, ColorRing } from 'react-loader-spinner';
 import { v4 as uuidv4 } from 'uuid';
+import { GitHub } from '@mui/icons-material';
 
 function ButtonAppBar() {
   const {
-    theme: { mode },
+    theme: { mode, textColor },
     changeTitle,
     podcast,
     event_Emitter,
@@ -137,6 +139,15 @@ function ButtonAppBar() {
             <Button onClick={showDemo}>Load Demo</Button>
           )}
           <ModeSwitch />
+          <IconButton onClick={() => window.open('https://github.com/TareqFl')}>
+            <GitHub
+              fontSize="large"
+              sx={{
+                color: textColor,
+                ':hover': { scale: '1.5', transition: '.35s' },
+              }}
+            />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </Box>
