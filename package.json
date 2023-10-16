@@ -17,11 +17,10 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-free": "^6.0.0",
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.10",
-    "date-fns": "^2.29.3",
     "event-emitter": "^0.3.4",
-    "fade-maker": "^1.0.3",
     "file-saver": "^2.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -29,9 +28,7 @@
     "react-studio-js": "^0.0.2",
     "sass": "^1.66.1",
     "tone": "^14.7.77",
-    "uuid": "^9.0.1",
-    "virtual-dom": "^2.1.1",
-    "webaudio-peaks": "^1.0.0"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
