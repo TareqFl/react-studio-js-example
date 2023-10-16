@@ -3,6 +3,7 @@ import WaveformPlaylist from 'react-studio-js';
 import * as Tone from 'tone';
 import EventEmitter from 'event-emitter';
 import { saveAs } from 'file-saver';
+import { v4 as uuidv4 } from 'uuid';
 // ===========================================================>
 import { Box, Paper } from '@mui/material';
 // ===========================================================>
@@ -12,11 +13,6 @@ import { dark } from './theme';
 import NavBar from './components/NavBar';
 import { useThemeSettings } from './hooks';
 import EditorButtons from './components/editorButtons/EditorButtons';
-
-// ===========================================================>
-
-import { v4 as uuidv4 } from 'uuid';
-
 // ===========================================================>
 
 const Editor = () => {
