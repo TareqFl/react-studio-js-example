@@ -11,6 +11,10 @@ shift track,
 CRUD operations for Annotations,
 save to local storage(optional)
 
+## Demo
+
+[React-Studio-Example](https://tareqfl.github.io/react-studio-js-example/)
+
 ## Browser Support
 
 react-studio-js requires webaudio in the browser to function correctly: [Can I Use?](http://caniuse.com/#search=webaudio)
