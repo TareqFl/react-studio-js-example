@@ -2,7 +2,7 @@ import { createContext, useEffect, useReducer } from 'react';
 import { dark, light } from '../theme';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import ContextMenu from '../components/ContextMenu';
-import Montserrat from '../assets/Montserrat/Montserrat-VariableFont_wght.ttf';
+
 // ======Imports============
 const THEME_DARK = 'THEME_DARK';
 const THEME_LIGHT = 'THEME_LIGHT';
@@ -190,25 +190,6 @@ export const SettingsContext = ({ children }) => {
     };
   }, []);
 
-  const theme = createTheme({
-    typography: {
-      fontFamily: 'Montserrat, Roboto',
-    },
-    components: {
-      MuiCssBaseline: {
-        styleOverrides: `@font-face{
-          font-family: 'Montserrat';
-          font-style: normal;
-          font-display: swap;
-          font-weight: 400;
-          src: local('Raleway'), local('Raleway-Regular'), url(${Montserrat}) format('ttf');
-          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-        
-        }`,
-      },
-    },
-  });
-
   return (
     <ThemeSettings.Provider
       value={{
@@ -223,14 +204,12 @@ export const SettingsContext = ({ children }) => {
         setDialogBox,
       }}
     >
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <ContextMenu
-          position={state.contextMenu}
-          closeContextMenu={closeContextMenu}
-        />
-        {children}
-      </ThemeProvider>
+      <CssBaseline />
+      <ContextMenu
+        position={state.contextMenu}
+        closeContextMenu={closeContextMenu}
+      />
+      {children}
     </ThemeSettings.Provider>
   );
 };
