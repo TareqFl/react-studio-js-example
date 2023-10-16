@@ -1,5 +1,5 @@
 import React, { useCallback, useReducer, useRef } from 'react';
-import WaveformPlaylist from 'react-studio-js';
+import ReactStudio from 'react-studio-js';
 import * as Tone from 'tone';
 import EventEmitter from 'event-emitter';
 import { saveAs } from 'file-saver';
@@ -130,7 +130,7 @@ const Editor = () => {
   const container = useCallback(
     (node) => {
       if (node !== null && toneCtx !== null) {
-        const playlist = WaveformPlaylist(
+        const playlist = ReactStudio(
           {
             ac: toneCtx.rawContext,
             container: node,
