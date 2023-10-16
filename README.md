@@ -26,8 +26,6 @@ react-studio-js requires webaudio in the browser to function correctly: [Can I U
 
 ## Basic Usage
 
-https://react-studio-js-example.vercel.app/
-
 ```javascript
 import ReactStudio from 'react-studio-js';
 
