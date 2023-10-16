@@ -1,10 +1,8 @@
 import { Button, ClickAwayListener, Paper, Stack } from '@mui/material';
 import { useThemeSettings } from '../hooks';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
-  CallSplit,
   DragIndicator,
-  FileDownload,
   NearMe,
   SettingsEthernet,
   SouthEast,
@@ -17,10 +15,6 @@ const ContextMenu = ({ position, closeContextMenu }) => {
   const { event_Emitter } = useThemeSettings();
 
   const { clientX, clientY, display } = position;
-
-  useEffect(() => {
-    event_Emitter.on('finished', () => console.log('finished'));
-  }, []);
 
   return (
     <ClickAwayListener onClickAway={() => closeContextMenu()}>
@@ -49,7 +43,10 @@ const ContextMenu = ({ position, closeContextMenu }) => {
           <Button
             startIcon={<DragIndicator sx={{ rotate: '90deg' }} />}
             variant="text"
-            onClick={() => {}}
+            onClick={() => {
+              event_Emitter.emit('statechange', 'select');
+              closeContextMenu();
+            }}
           >
             region
           </Button>
@@ -63,19 +60,44 @@ const ContextMenu = ({ position, closeContextMenu }) => {
           >
             shift
           </Button>
-          <Button startIcon={<CallSplit />} variant="text" onClick={() => {}}>
-            split
-          </Button>
-          <Button startIcon={<SouthWest />} variant="text" onClick={() => {}}>
+          <Button
+            startIcon={<SouthWest />}
+            variant="text"
+            onClick={() => {
+              event_Emitter.emit('statechange', 'fadein');
+              closeContextMenu();
+            }}
+          >
             fade in
           </Button>
-          <Button startIcon={<SouthEast />} variant="text" onClick={() => {}}>
+          <Button
+            startIcon={<SouthEast />}
+            variant="text"
+            onClick={() => {
+              event_Emitter.emit('statechange', 'fadeout');
+              closeContextMenu();
+            }}
+          >
             fade out
           </Button>
-          <Button startIcon={<ZoomIn />} variant="text" onClick={() => {}}>
+          <Button
+            startIcon={<ZoomIn />}
+            variant="text"
+            onClick={() => {
+              event_Emitter.emit('zoomin');
+              closeContextMenu();
+            }}
+          >
             zoom in
           </Button>
-          <Button startIcon={<ZoomOut />} variant="text" onClick={() => {}}>
+          <Button
+            startIcon={<ZoomOut />}
+            variant="text"
+            onClick={() => {
+              event_Emitter.emit('zoomout');
+              closeContextMenu();
+            }}
+          >
             zoom out
           </Button>
         </Stack>

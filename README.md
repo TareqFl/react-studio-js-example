@@ -1,6 +1,7 @@
 # React-react-studio-js
 
 ![Screenshot](img/ref_1.png?raw=true 'stem tracks mute solo volume control')
+![Screenshot](img/ref_2.png?raw=true 'add annotations and crud operations')
 
 features
 Record track,
