@@ -1,12 +1,5 @@
 import { Pause, PlayArrow } from '@mui/icons-material';
-import {
-  Box,
-  IconButton,
-  Slider,
-  Stack,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { Box, IconButton, Stack, Tooltip, Typography } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import { useThemeSettings } from '../../../hooks';
 

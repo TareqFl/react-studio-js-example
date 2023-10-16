@@ -1,7 +1,6 @@
 # React-react-studio-js
 
 ![Screenshot](img/ref_1.png?raw=true 'stem tracks mute solo volume control')
-![Screenshot](img/ref_2.png?raw=true 'add annotations and crud operations')
 
 features
 Record track,
@@ -10,10 +9,12 @@ split,
 shift track,
 CRUD operations for Annotations,
 save to local storage(optional)
+![Screenshot](img/ref_2.png?raw=true 'add annotations and crud operations')
 
 ## Demo
 
-[React-Studio-Example](https://tareqfl.github.io/react-studio-js-example/)
+[React Example](https://react-studio-js-example.vercel.app/)
+[React Example Github](https://github.com/TareqFl/react-studio-js-example)
 
 ## Browser Support
 
@@ -24,6 +25,10 @@ react-studio-js requires webaudio in the browser to function correctly: [Can I U
 `npm i react-studio-js`
 
 ## Basic Usage
+
+https://react-studio-js-example.vercel.app/
+
+## GitHub Reactjs example
 
 https://github.com/TareqFl/react-studio-js-example
 

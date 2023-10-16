@@ -1,6 +1,4 @@
 
-
-
 $wp-mute-solo-color: #343a40 !default;
 $wp-mute-solo-hover-color: #fff !default;
 $wp-mute-solo-focus-color: rgba(52, 58, 64, 0.5) !default;
@@ -399,13 +397,13 @@ color: white;
       background: #2499ef;
     }
 
-    input[type="range"]:focus::-webkit-slider-thumb {
+    // input[type="range"]:focus::-webkit-slider-thumb {
       // border: 2px solid var(--wp-range-slider-focus-color);
-    }
+    // }
 
-    input[type="range"]:focus::-moz-range-thumb {
+    // input[type="range"]:focus::-moz-range-thumb {
       // border: 2px solid var(--wp-range-slider-focus-color);
-    }
+    // }
   }
 
   .annotations {

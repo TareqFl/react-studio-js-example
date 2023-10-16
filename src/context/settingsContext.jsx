@@ -1,6 +1,6 @@
 import { createContext, useEffect, useReducer } from 'react';
 import { dark, light } from '../theme';
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import ContextMenu from '../components/ContextMenu';
 
 // ======Imports============
