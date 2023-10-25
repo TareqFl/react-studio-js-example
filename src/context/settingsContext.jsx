@@ -6,7 +6,7 @@ import ContextMenu from '../components/ContextMenu';
 // ======Imports============
 const THEME_DARK = 'THEME_DARK';
 const THEME_LIGHT = 'THEME_LIGHT';
-const RESIZE_SCREEN = 'RESIZE_SCREEN';
+
 const CONTEXT_MENU = 'CONTEXT_MENU';
 const CLOSE_CONTEXT_MENU = 'CLOSE_CONTEXT_MENU';
 const KEY_PRESS = 'KEY_PRESS';
@@ -23,10 +23,7 @@ const initialState = {
     backgroundColor: dark,
     textColor: 'white',
   },
-  screen: {
-    width: '100vw',
-    height: '100vh',
-  },
+
   contextMenu: {
     clientX: 0,
     clientY: 0,
@@ -58,9 +55,6 @@ function reducer(state, action) {
         ...state,
         theme: { mode: 'light', backgroundColor: light, textColor: 'black' },
       };
-
-    case RESIZE_SCREEN:
-      return { ...state, screen: payload };
 
     case CONTEXT_MENU:
       return { ...state, contextMenu: payload };
@@ -158,14 +152,6 @@ export const SettingsContext = ({ children }) => {
 
   // handle events
   useEffect(() => {
-    window.onresize = () => {
-      const { innerWidth, innerHeight } = window;
-      dispatch({
-        type: RESIZE_SCREEN,
-        payload: { height: innerHeight, width: innerWidth },
-      });
-    };
-
     // context menu event listener
     const editor = document.getElementById('editor');
     editor.oncontextmenu = (e) => {

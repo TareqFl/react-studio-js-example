@@ -18,7 +18,6 @@ import EditorButtons from './components/editorButtons/EditorButtons';
 const Editor = () => {
   const {
     theme,
-    screen,
     setEventEmitter,
     podcast,
     showAnnotations,
@@ -28,7 +27,7 @@ const Editor = () => {
     dialogBox,
     setDialogBox,
   } = useThemeSettings();
-  const { height, width } = screen;
+
   const { backgroundColor, textColor } = theme;
 
   // =============Types================>
