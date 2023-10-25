@@ -339,12 +339,11 @@ const Editor = () => {
     <Box
       sx={{
         p: 2,
-        height,
-        width,
         backgroundColor,
         color: textColor,
         paddingTop: 10,
         overflowY: 'auto',
+        overflowX: 'hidden',
       }}
     >
       <NavBar />

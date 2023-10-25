@@ -1,6 +1,6 @@
 import { createContext, useEffect, useReducer } from 'react';
 import { dark, light } from '../theme';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import ContextMenu from '../components/ContextMenu';
 
 // ======Imports============
@@ -190,6 +190,18 @@ export const SettingsContext = ({ children }) => {
     };
   }, []);
 
+  const {
+    theme: { mode, backgroundColor },
+  } = state;
+  const theme = createTheme({
+    palette: {
+      mode,
+      background: {
+        default: backgroundColor,
+      },
+    },
+  });
+
   return (
     <ThemeSettings.Provider
       value={{
@@ -204,12 +216,14 @@ export const SettingsContext = ({ children }) => {
         setDialogBox,
       }}
     >
-      <CssBaseline />
-      <ContextMenu
-        position={state.contextMenu}
-        closeContextMenu={closeContextMenu}
-      />
-      {children}
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <ContextMenu
+          position={state.contextMenu}
+          closeContextMenu={closeContextMenu}
+        />
+        {children}
+      </ThemeProvider>
     </ThemeSettings.Provider>
   );
 };
