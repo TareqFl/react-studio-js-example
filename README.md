@@ -11,6 +11,10 @@ CRUD operations for Annotations,
 save to local storage(optional)
 ![Screenshot](img/ref_2.png?raw=true 'add annotations and crud operations')
 
+## for TypeScript Support
+download the file "react-studio-js.d.ts" and add to your source
+https://github.com/TareqFl/-types-react-studio-js
+
 ## Demo
 
 [React Example](https://react-studio-js-example.vercel.app/) |
